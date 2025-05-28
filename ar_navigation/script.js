@@ -16,6 +16,7 @@ function render_elements() {
         turn_right: "../assets/ar_right.png",
         turn_left: "../assets/ar_left.png",
         straight: "../assets/ar_straight.png",
+        slight_left: "../assets/ar_slight_left.png",
       };
 
       let steps = response.routes[0].legs[0].steps;
@@ -25,12 +26,12 @@ function render_elements() {
         let distance = steps[i].distance;
         let instruction = steps[i].maneuver.instruction;
 
-        if (instruction.includes("girar a la derecha")) {
+        if (instruction.includes("Gire a la derecha")) {
           image = "turn_right";
-        } else if (instruction.includes("girar a la izquierda")) {
+        } else if (instruction.includes("Gire a la izquierda ")) {
           image = "turn_left";
-        } else if (instruction.includes("continuar recto")) {
-          image = "straight";
+        } else if (instruction.includes("a la izquierda")) {
+          image = "slight_left";
         }
 
         if (i > 0) {
