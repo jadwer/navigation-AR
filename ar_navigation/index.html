@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no,
+         initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Document</title>
+
+    <!-- AFrame -->
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
     <!-- JQuery -->
     <script
@@ -11,12 +19,35 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
 
-
     <!-- Link to CSS and JavaScript files -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
-</head>
-<body>
-    <h1>Entró!!</h1>
-</body>
+  </head>
+  <body>
+    <a-scene
+      vr-mode-ui="enabled:false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      id="scene_container">
+      <a-assets>
+        <a-asset-item
+          id="ballmodel"
+          src="../assets/beach_ball/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera
+        gps-camera
+        rotation-reader
+        minDistance="1"
+        positionMinAccuracy="0">
+      </a-camera>
+      <!-- a-entity
+      gltf-model="#ballmodel"
+      scale="1 1 1"
+        rotation="0 0 -36"
+        position="0 0 0"
+        look-at="[gps-camera]"
+        gps-entity-place="latitude:19.4558356; longitude:-99.095859;"></a-entity -->
+    </a-scene>
+  </body>
 </html>

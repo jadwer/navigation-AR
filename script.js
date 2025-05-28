@@ -30,10 +30,10 @@ function initGeolocation() {
 
 function success(position) {
   console.log(position);
-  //   latitude = 19.4348;
-  //   longitude = -99.1413;
-  latitude = position.coords.latitude;
-  longitude = position.coords.longitude;
+     latitude = 19.4558356;
+     longitude = -99.095859;
+  //latitude = position.coords.latitude;
+  //longitude = position.coords.longitude;
 
   // Initializing Mapbox
   mapboxgl.accessToken =
